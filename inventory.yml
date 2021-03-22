@@ -1,0 +1,59 @@
+all:
+  hosts:
+    unifi:
+      ansible_host: 10.0.0.21
+    omvlandstrasse:
+      ansible_host: 10.0.0.20
+    gucalamole:
+      ansible_host: 10.0.0.30
+    dockerhost:
+      ansible_host: 10.0.0.23
+    organizr:
+      ansible_host: 10.0.0.22
+    dokuwiki:
+      ansible_host: 10.0.0.41
+    tandoorrezepte:
+      ansible_host: 10.0.0.31
+    librenms:
+      ansible_host: 10.0.0.40
+    ansible-server:
+      ansible_host: 10.0.0.50
+    mediaserver:
+      ansible_host: 10.11.0.3
+    plexserver:
+      ansible_host: 10.11.0.5
+    invoiceninja:
+      ansible_host: 10.0.0.51
+    nextcloud:
+      ansible_host: 10.0.0.25
+    fileserv:
+      ansible_host: 10.0.0.254
+    omvseestrasse:
+      ansible_host: 10.1.0.10
+    virtudesktop:
+      ansible_host: 10.0.0.100
+
+  children:
+    test:
+      hosts:
+        ansibleserver:
+          ansible_host: 10.0.0.50
+    exposedservers:
+      hosts:
+        nextcloud:
+        gucacamole:
+        docker-host:
+        dokuwiki:
+    minisserver:
+      hosts:
+        ansibleserver:
+        unifi:
+    smx9server:
+      hosts:
+        mediaserver:
+        plexserver:
+        invoiceninja:
+        nextcloud:
+        fileserv:
+        omvlandstrasse:
+        virtudesktop:
