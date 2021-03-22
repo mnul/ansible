@@ -16,8 +16,6 @@ all:
       ansible_host: 10.0.0.31
     librenms:
       ansible_host: 10.0.0.40
-    ansible-server:
-      ansible_host: 10.0.0.50
     mediaserver:
       ansible_host: 10.11.0.3
     plexserver:
@@ -30,14 +28,14 @@ all:
       ansible_host: 10.0.0.254
     omvseestrasse:
       ansible_host: 10.1.0.10
-    virtudesktop:
-      ansible_host: 10.0.0.100
 
   children:
     test:
       hosts:
         ansibleserver:
           ansible_host: 10.0.0.50
+        virtdesktop:
+          ansible_host: 10.0.0.100
     exposedservers:
       hosts:
         nextcloud:
