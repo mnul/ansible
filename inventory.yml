@@ -4,7 +4,7 @@ all:
       ansible_host: 10.0.0.21
     omvlandstrasse:
       ansible_host: 10.0.0.20
-    gucalamole:
+    guacamole:
       ansible_host: 10.0.0.30
     dockerhost:
       ansible_host: 10.0.0.23
@@ -24,8 +24,6 @@ all:
       ansible_host: 10.0.0.51
     nextcloud:
       ansible_host: 10.0.0.25
-    fileserv:
-      ansible_host: 10.0.0.254
     omvseestrasse:
       ansible_host: 10.1.0.10
 
@@ -49,9 +47,25 @@ all:
     smx9server:
       hosts:
         mediaserver:
+          ansible_host: 10.11.0.3
         plexserver:
+          ansible_host: 10.11.0.5
         invoiceninja:
         nextcloud:
         fileserv:
+          ansible_host: 10.0.0.254
         omvlandstrasse:
         virtudesktop:
+    media:
+      hosts:
+        fileserv:
+        plexserver:
+        mediaserver:
+        omvlandstrasse:
+        omvseestrasse:
+    proxmoxservers:
+      hosts:
+        smx9:
+          ansible_host: 10.0.0.15
+        minispve:
+          ansible_host: 10.0.0.17
