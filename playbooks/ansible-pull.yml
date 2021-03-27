@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+  
+  - name: Execute ansible pull script
+    shell:
+      cmd: ansible-pull --vault-password-file /root/.ansible-vault-password -U https://github.com/mnul/ansible-pull.git
+    
