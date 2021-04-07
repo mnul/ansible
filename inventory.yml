@@ -38,7 +38,7 @@ all:
       hosts:
         nextcloud:
         gucacamole:
-        docker-host:
+        dockerhost:
         dokuwiki:
     minisserver:
       hosts:
