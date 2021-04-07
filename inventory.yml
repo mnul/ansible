@@ -32,7 +32,7 @@ all:
       hosts:
         ansibleserver:
           ansible_host: 10.0.0.50
-        virtdesktop:
+        vdesktop:
           ansible_host: 10.0.0.100
     exposedservers:
       hosts:
@@ -55,7 +55,7 @@ all:
         fileserv:
           ansible_host: 10.0.0.254
         omvlandstrasse:
-        virtudesktop:
+        vdesktop:
     media:
       hosts:
         fileserv:
