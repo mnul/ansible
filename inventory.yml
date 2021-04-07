@@ -37,7 +37,7 @@ all:
     exposedservers:
       hosts:
         nextcloud:
-        gucacamole:
+        guacamole:
         dockerhost:
         dokuwiki:
     minisserver:
