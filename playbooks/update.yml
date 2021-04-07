@@ -3,9 +3,13 @@
 - hosts: all
   become: true
   tasks:
-  
-  - name: Update & full upgrade
+
+  - name: update cache
     apt:
       update_cache: yes
+
+  
+  - name: full upgrade
+    apt:
       upgrade: full
     
