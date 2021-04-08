@@ -1,0 +1,11 @@
+---
+
+- hosts: desktop
+  become: true
+  tasks:
+  
+  - name: sync ssh config
+    synchronize: 
+      src: /home/manu/.ssh/config
+      dest: /home/manu/.ssh/config
+      mode: pull
