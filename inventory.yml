@@ -26,6 +26,11 @@ all:
       ansible_host: 10.0.0.25
     omvseestrasse:
       ansible_host: 10.1.0.10
+    desktop:
+      ansible_host: 10.0.0.101
+    laptop:
+      ansible_host: 10.0.0.102
+    
 
   children:
     test:
@@ -69,3 +74,8 @@ all:
           ansible_host: 10.0.0.15
         minispve:
           ansible_host: 10.0.0.17
+    desktopgroup:
+      hosts:
+        vdesktop:
+        desktop:
+        laptop:
