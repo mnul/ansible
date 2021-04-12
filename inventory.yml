@@ -30,6 +30,8 @@ all:
       ansible_host: 10.0.0.101
     laptop:
       ansible_host: 10.0.0.102
+    grafana:
+      ansible_host: 10.0.0.29
     
 
   children:
@@ -49,6 +51,10 @@ all:
       hosts:
         ansibleserver:
         unifi:
+        ansible:
+        guacamole:
+        dockerhost:
+        grafana:
     smx9server:
       hosts:
         mediaserver:

@@ -12,8 +12,8 @@
   
   - name: sync ssh config manu
     copy: 
-      src: /home/manu/.ssh/config
-      dest: /home/manu/.ssh/config
+      src: /home/manu/.ssh/
+      dest: /home/manu/.ssh/
       owner: manu
 
   - name: create folder for ansible
@@ -24,8 +24,8 @@
 
   - name: sync ssh config ansible
     copy:
-      src: /home/manu/.ssh/config
-      dest: /home/ansible/.ssh/config
+      src: /home/manu/.ssh/
+      dest: /home/ansible/.ssh/
       owner: ansible
 
   - name: create folder for root
