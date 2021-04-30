@@ -30,6 +30,8 @@ all:
       ansible_host: 10.0.0.102
     grafana:
       ansible_host: 10.0.0.29
+    octoprint:
+      ansible_host: 10.11.0.10
     
 
   children:
