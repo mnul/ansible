@@ -66,6 +66,7 @@ all:
           ansible_host: 10.0.0.254
         omvlandstrasse:
         vdesktop:
+
     media:
       hosts:
         fileserv:
