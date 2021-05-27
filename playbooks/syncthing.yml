@@ -2,18 +2,19 @@
 
 - hosts: all
   become: true
-  when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS"]
   tasks:
 
   - name: import apt key
     apt_key:
       url: https://syncthing.net/release-key.gpg
       state: present
+    when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS"]
   
   - name: install syncthing repository
     apt_repository: 
       repo: deb https://apt.syncthing.net/ syncthing stable
       state: present
+    when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS"]
 
   - name: update cache
     apt:
@@ -21,6 +22,7 @@
       name: 
         - syncthing
       state: present
+    when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS"]
 
   - name: add user
     user: 
