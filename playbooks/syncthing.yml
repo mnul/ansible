@@ -1,0 +1,35 @@
+---
+
+- hosts: all
+  become: true
+  when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS"]
+  tasks:
+
+  - name: import apt key
+    apt_key:
+      url: https://syncthing.net/release-key.gpg
+      state: present
+  
+  - name: install syncthing repository
+    apt_repository: 
+      repo: deb https://apt.syncthing.net/ syncthing stable
+      state: present
+
+  - name: update cache
+    apt:
+      update_cache: yes
+      name: 
+        - syncthing
+      state: present
+
+  - name: add user
+    user: 
+      name: sync
+      shell: /bin/bash
+      system: yes
+  
+  - name: enable syncthing
+    sydtemd:
+      name: syncthing@sync
+      state: started
+      enabled: true
