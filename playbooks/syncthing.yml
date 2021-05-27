@@ -31,7 +31,7 @@
       system: yes
   
   - name: enable syncthing
-    sydtemd:
+    systemd:
       name: syncthing@sync
       state: started
       enabled: true
@@ -45,7 +45,7 @@
       backup: yes
 
   - name: restart syncthing
-    sydtemd:
+    systemd:
       name: syncthing@sync
       state: restarted
       enabled: true
