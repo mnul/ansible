@@ -28,15 +28,22 @@
       shell: /bin/bash
       system: yes
   
-  - name: change gui listen address
-    replace:
-      path: 
-      regexp: '<address>127.0.0.1:8384</address>'
-      replace: '<address>0.0.0.0:8384</address>'
-      backup: yes
-
   - name: enable syncthing
     sydtemd:
       name: syncthing@sync
       state: started
+      enabled: true
+
+
+  - name: change gui listen address
+    replace:
+      path: /home/sync/.config/syncthing
+      regexp: '<address>127.0.0.1:8384</address>'
+      replace: '<address>0.0.0.0:8384</address>'
+      backup: yes
+
+  - name: restart syncthing
+    sydtemd:
+      name: syncthing@sync
+      state: restarted
       enabled: true
