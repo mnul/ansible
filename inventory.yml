@@ -32,15 +32,18 @@ all:
       ansible_host: 10.0.0.29
     octoprint:
       ansible_host: 10.11.0.10
-    
+    test:
+      ansible_host: 10.0.0.88
 
   children:
-    test:
+    testhosts:
       hosts:
         ansibleserver:
           ansible_host: 10.0.0.50
         vdesktop:
           ansible_host: 10.0.0.100
+        test:
+
     exposedservers:
       hosts:
         nextcloud:

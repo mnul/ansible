@@ -27,14 +27,23 @@
   - name: add user
     user: 
       name: sync
-      shell: /bin/bash
+      home: /home/sync
+#      move_home: yes
+#      shell: /bin/bash
       system: yes
+      state: present
   
+  - name: create systemd/service exists
+    file: 
+      path: /etc/systemd/service
+      state: directory
+      owner: root
+
   - name: copy syncthing service file
     copy:
-      src: roles/common/files/syncthing@.service
+      src: syncthing@.service
       dest: /etc/systemd/service/syncthing@.service
-      user: root
+      owner: root
       group: root
       mode: 0600
 
@@ -47,7 +56,7 @@
 
   - name: change gui listen address
     replace:
-      path: /home/sync/.config/syncthing
+      path: /home/sync/.config/syncthing/config.xml
       regexp: '<address>127.0.0.1:8384</address>'
       replace: '<address>0.0.0.0:8384</address>'
       backup: yes
