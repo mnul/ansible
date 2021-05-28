@@ -30,6 +30,14 @@
       shell: /bin/bash
       system: yes
   
+  - name: copy syncthing service file
+    copy:
+      src: roles/common/files/syncthing@.service
+      dest: /etc/systemd/service/syncthing@.service
+      user: root
+      group: root
+      mode: 0600
+
   - name: enable syncthing
     systemd:
       name: syncthing@sync
