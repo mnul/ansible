@@ -90,7 +90,7 @@ all:
         vdesktop:
         desktop:
         laptop:
-    octoprint
+    octoprint:
       hosts:
         ndr5:
           ansible_host: 10.11.0.10
