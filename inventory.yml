@@ -30,8 +30,6 @@ all:
       ansible_host: 10.0.0.102
     grafana:
       ansible_host: 10.0.0.29
-    test:
-      ansible_host: 10.0.0.88
 
   children:
     testhosts:
