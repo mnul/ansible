@@ -57,6 +57,8 @@ all:
           ansible_host: 10.0.0.253
         sync:
           ansible_host: 10.0.0.27
+        homer:
+          ansible_host: 10.0.0.24
     smx9server:
       hosts:
         mediaserver:
