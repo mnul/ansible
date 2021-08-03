@@ -1,64 +1,42 @@
 all:
   hosts:
-    unifi:
-      ansible_host: 10.0.0.21
-    omvlandstrasse:
-      ansible_host: 10.0.0.20
-    guacamole:
-      ansible_host: 10.0.0.30
-    dockerhost:
-      ansible_host: 10.0.0.23
-    organizr:
-      ansible_host: 10.0.0.22
-    dokuwiki:
-      ansible_host: 10.0.0.41
-    tandoorrezepte:
-      ansible_host: 10.0.0.31
-    mediaserver:
-      ansible_host: 10.11.0.3
-    plexserver:
-      ansible_host: 10.11.0.5
-    invoiceninja:
-      ansible_host: 10.0.0.51
-    nextcloud:
-      ansible_host: 10.0.0.25
+
     omvseestrasse:
       ansible_host: 10.1.0.10
-    desktop:
-      ansible_host: 10.0.0.101
-    laptop:
-      ansible_host: 10.0.0.102
-    grafana:
-      ansible_host: 10.0.0.29
+
 
   children:
-    testhosts:
-      hosts:
-        ansibleserver:
-          ansible_host: 10.0.0.50
-        vdesktop:
-          ansible_host: 10.0.0.100
-        test:
 
     exposedservers:
       hosts:
         nextcloud:
+          ansible_host: 10.0.0.25
         guacamole:
+          ansible_host: 10.0.0.30
         dockerhost:
+          ansible_host: 10.0.0.23
         dokuwiki:
+          ansible_host: 10.0.0.41
+
     minisserver:
       hosts:
         ansibleserver:
         unifi:
+          ansible_host: 10.0.0.21
         guacamole:
         dockerhost:
         grafana:
+          ansible_host: 10.0.0.29
         data-srv:
           ansible_host: 10.0.0.253
         sync:
           ansible_host: 10.0.0.27
         homer:
           ansible_host: 10.0.0.24
+        tandoorrezepte:
+          ansible_host: 10.0.0.31
+
+
     smx9server:
       hosts:
         mediaserver:
@@ -66,11 +44,14 @@ all:
         plexserver:
           ansible_host: 10.11.0.5
         invoiceninja:
+          ansible_host: 10.0.0.51
         nextcloud:
         fileserv:
           ansible_host: 10.0.0.254
         omvlandstrasse:
+          ansible_host: 10.0.0.20
         vdesktop:
+          ansible_host: 10.0.0.100
 
     media:
       hosts:
@@ -79,6 +60,8 @@ all:
         mediaserver:
         omvlandstrasse:
         omvseestrasse:
+        data-srv:
+
     proxmoxservers:
       hosts:
         smx9:
@@ -89,7 +72,9 @@ all:
       hosts:
         vdesktop:
         desktop:
+          ansible_host: 10.0.0.101
         laptop:
+          ansible_host: 10.0.0.102
     octoprint:
       hosts:
         ndr5:
