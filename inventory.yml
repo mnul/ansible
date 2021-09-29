@@ -1,10 +1,7 @@
 all:
   hosts:
 
-    omvseestrasse:
-      ansible_host: 10.1.0.10
-
-
+    
   children:
 
     exposedservers:
@@ -36,6 +33,8 @@ all:
           ansible_host: 10.0.0.24
         tandoorrezepte:
           ansible_host: 10.0.0.31
+        cups:
+          ansible_host: 10.0.0.33
 
 
     smx9server:
@@ -82,3 +81,14 @@ all:
           ansible_host: 10.11.0.10
         crapmaker:
           ansible_host: 10.11.0.11
+    seestrasse:
+      hosts:
+        dockerpi:
+          ansible_host: 10.1.0.5
+        omvseestrasse:
+          ansible_host: 10.1.0.10
+    docker:
+      hosts:
+        dockerpi:
+        dockerhost:
+        tandoorrezepte:
