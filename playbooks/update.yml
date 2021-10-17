@@ -12,4 +12,12 @@
   - name: full upgrade
     apt:
       upgrade: full
+
+  - name: autoremove
+    apt:
+      autoremove: yes
+    
+  - name: clean apt cache
+    apt:
+      autoclean: yes
     
