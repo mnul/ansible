@@ -7,11 +7,11 @@ all:
     exposedservers:
       hosts:
         nextcloud:
-          ansible_host: 10.0.0.25
+          ansible_host: 10.0.0.45
         guacamole:
-          ansible_host: 10.0.0.30
+          ansible_host: 10.0.0.40
         dockerhost:
-          ansible_host: 10.0.0.23
+          ansible_host: 10.0.0.22
         dokuwiki:
           ansible_host: 10.0.0.41
 
@@ -28,13 +28,13 @@ all:
         data-srv:
           ansible_host: 10.0.0.253
         sync:
-          ansible_host: 10.0.0.27
+          ansible_host: 10.0.0.26
         homer:
-          ansible_host: 10.0.0.24
+          ansible_host: 10.0.0.25
         tandoorrezepte:
-          ansible_host: 10.0.0.31
+          ansible_host: 10.0.0.42
         cups:
-          ansible_host: 10.0.0.33
+          ansible_host: 10.0.0.252
 
 
     smx9server:
@@ -44,7 +44,7 @@ all:
         plexserver:
           ansible_host: 10.11.0.5
         invoiceninja:
-          ansible_host: 10.0.0.51
+          ansible_host: 10.0.0.43
         nextcloud:
         fileserv:
           ansible_host: 10.0.0.254
