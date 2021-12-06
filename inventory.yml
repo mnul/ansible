@@ -68,6 +68,9 @@ all:
           ansible_host: 10.0.0.15
         minispve:
           ansible_host: 10.0.0.17
+        dell:
+          ansible_host: 10.0.0.18
+
     desktopgroup:
       hosts:
         vdesktop:
