@@ -37,7 +37,8 @@ all:
           ansible_host: 10.0.0.252
         phpipam:
           ansible_host: 10.0.0.27
-
+        paperless:
+          ansible_host: 10.0.0.30
 
     smx9server:
       hosts:

@@ -1,0 +1,6 @@
+- hosts: YourAnsibleTargetHostGoesHere
+  become: yes
+  vars_files:
+    - vars/paperless-ng.yml
+  roles:
+    - paperless-ng
