@@ -15,7 +15,7 @@ all:
         dokuwiki:
           ansible_host: 10.0.0.41
 
-    minisserver:
+    dellserver:
       hosts:
         ansibleserver:
           ansible_host: 10.0.0.50
@@ -33,12 +33,15 @@ all:
           ansible_host: 10.0.0.25
         tandoorrezepte:
           ansible_host: 10.0.0.42
-        cups:
-          ansible_host: 10.0.0.252
         phpipam:
           ansible_host: 10.0.0.27
         paperless:
           ansible_host: 10.0.0.30
+        vikunja:
+          ansible_host: 10.0.0.44
+        wallabag:
+          ansible_host: 10.0.0.46
+
 
     smx9server:
       hosts:
@@ -69,24 +72,22 @@ all:
       hosts:
         smx9:
           ansible_host: 10.0.0.15
-        minispve:
-          ansible_host: 10.0.0.17
         dell:
           ansible_host: 10.0.0.18
 
-    desktopgroup:
-      hosts:
-        vdesktop:
-        desktop:
-          ansible_host: 10.0.0.101
-        laptop:
-          ansible_host: 10.0.0.102
-    octoprint:
-      hosts:
-        ndr5:
-          ansible_host: 10.11.0.10
-        crapmaker:
-          ansible_host: 10.11.0.11
+#    desktopgroup:
+#      hosts:
+#        vdesktop:
+#        desktop:
+#          ansible_host: 10.0.0.101
+#        laptop:
+#          ansible_host: 10.0.0.102
+#    octoprint:
+#      hosts:
+#        ndr5:
+#          ansible_host: 10.11.0.10
+#        crapmaker:
+#          ansible_host: 10.11.0.11
     seestrasse:
       hosts:
         dockerpi:

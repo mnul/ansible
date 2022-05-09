@@ -1,4 +1,4 @@
-- hosts: YourAnsibleTargetHostGoesHere
+- hosts: paperless
   become: yes
   vars_files:
     - vars/paperless-ng.yml
