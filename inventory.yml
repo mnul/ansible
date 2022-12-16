@@ -80,19 +80,6 @@ all:
         futro1:
           ansible_host: 10.0.0.13
 
-#    desktopgroup:
-#      hosts:
-#        vdesktop:
-#        desktop:
-#          ansible_host: 10.0.0.101
-#        laptop:
-#          ansible_host: 10.0.0.102
-#    octoprint:
-#      hosts:
-#        ndr5:
-#          ansible_host: 10.11.0.10
-#        crapmaker:
-#          ansible_host: 10.11.0.11
     seestrasse:
       hosts:
         dockerpi:
@@ -104,3 +91,6 @@ all:
         dockerpi:
         dockerhost:
         tandoorrezepte:
+        vikunja:
+        wallabag:
+        
