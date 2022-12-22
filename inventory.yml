@@ -1,77 +1,84 @@
 all:
   hosts:
-
-    
   children:
 
-    exposedservers:
+    docker: #docker-container
+      children:
+        dockercore:
+        paperless:
+        immich:
+        rezepte:
+        vikunja:
+        wallabag:
+      vars:
+        compose_file: /docker
+
+    fileserver: #smb-server
+      children:
+        omvlandstr:
+        filesrv:
+        mediaserver:
+        datasrv:
+        omvseestr:
+
+    vserver: #virtualisierte Server
+      children:
+        pvesmx9:
+        pvedell:
+        pvefutro1:
+
+    pvesmx9: #nodes smx9
       hosts:
+        omvlandstr:
+          ansible_host: 10.0.0.20
+        filesrv:
+          ansible_host: 10.0.0.254
+        mediaserver:
+          ansible_host: 10.11.0.3
+        plex:
+          ansible_host: 10.11.0.5
         nextcloud:
           ansible_host: 10.0.0.45
-        guacamole:
-          ansible_host: 10.0.0.40
-        dockerhost:
-          ansible_host: 10.0.0.22
-        dokuwiki:
-          ansible_host: 10.0.0.41
-        immich:
-          ansible_host: immich.lan
-
-    dellserver:
+        invoice:
+          ansible_host: 10.0.0.43
+        
+    pvedell: #nodes dell
       hosts:
-        ansibleserver:
-          ansible_host: 10.0.0.50
-        unifi:
-          ansible_host: 10.0.0.21
-        guacamole:
-        dockerhost:
-        grafana:
-          ansible_host: 10.0.0.29
-        data-srv:
-          ansible_host: 10.0.0.253
-        sync:
-          ansible_host: 10.0.0.26
-        homer:
-          ansible_host: 10.0.0.25
-        tandoorrezepte:
-          ansible_host: 10.0.0.42
+        dockercore:
+          ansible_host: 10.0.0.22
         phpipam:
           ansible_host: 10.0.0.27
+        grafana:
+          ansoble_host: 10.0.0.29
         paperless:
           ansible_host: 10.0.0.30
+          compose_file: /home/paperless/paperless-ngx
+        guaca:
+          ansible_host: 10.0.0.40
+        ansible:
+          ansible_host: 10.0.0.50
+        datasrv:
+          ansible_host: 10.0.0.253
+        immich:
+          ansible_host: 10.0.0.47
+    pvefutro1: #nodes futro1
+      hosts:
+        unifi:
+          ansible_host: 10.0.0.22
+        homer:
+          ansible_host: 10.0.0.25
+        syncthing:
+          ansible_host: 10.0.0.26
+        wiki:
+          ansible_host: 10.0.0.41
+        rezepte:
+          ansible_host: 10.0.0.42
         vikunja:
           ansible_host: 10.0.0.44
         wallabag:
           ansible_host: 10.0.0.46
-        immich:
-
-
-    smx9server:
-      hosts:
-        mediaserver:
-          ansible_host: 10.11.0.3
-        plexserver:
-          ansible_host: 10.11.0.5
-        invoiceninja:
-          ansible_host: 10.0.0.43
-        nextcloud:
-        fileserv:
-          ansible_host: 10.0.0.254
-        omvlandstrasse:
-          ansible_host: 10.0.0.20
-        vdesktop:
-          ansible_host: 10.0.0.100
-
-    media:
-      hosts:
-        fileserv:
-        plexserver:
-        mediaserver:
-        omvlandstrasse:
-        omvseestrasse:
-        data-srv:
-
-    proxmoxservers:
+        
+    hardware: #bare-metal devices
       hosts:
         smx9:
           ansible_host: 10.0.0.15
@@ -80,17 +87,16 @@ all:
         futro1:
           ansible_host: 10.0.0.13
 
-    seestrasse:
+    landstr: #location landstr
+    seestr: #location seestr
       hosts:
+        omvseestr:
+          ansible_host: 10.1.0.10
         dockerpi:
           ansible_host: 10.1.0.5
-        omvseestrasse:
-          ansible_host: 10.1.0.10
-    docker:
-      hosts:
-        dockerpi:
-        dockerhost:
-        tandoorrezepte:
-        vikunja:
-        wallabag:
-        
+    proxmoxhost: #proxmox-einheiten
+      children:
+        smx9:
+        dell:
+        futro1:
+      
