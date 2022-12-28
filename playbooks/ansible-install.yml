@@ -1,0 +1,23 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update cache
+    apt:
+      update_cache: yes
+      cache_valid_time: 3600
+  
+  - name: Uninstall apt Ansible
+  apt:
+    name:
+      - ansible
+      - ansible-core
+    state: absent
+  when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS", "Raspbian"]
+
+- name: Install Ansible using pip
+  pip:
+    name: ansible
+    state: latest
