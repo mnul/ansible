@@ -1,0 +1,12 @@
+---
+
+- hosts: docker
+  
+  beckome: true
+
+  tasks:
+
+    - name: "install ansible galaxy Docker"
+      community.general.ansible_galaxy_install:
+        type: collection
+        name: community.docker

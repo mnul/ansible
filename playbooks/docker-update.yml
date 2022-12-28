@@ -1,0 +1,17 @@
+---
+- hosts: docker
+  strategy: free
+  tasks:
+
+  - name: "Pull latest images and start containers"
+    community.docker.docker_compose:
+      pull: true
+      project_stc: "{{ compose_file }}"
+      state: present
+
+  - name: "clean up old docker files"
+    community.docker.docker_prune:
+      volumes: true
+      networks: true
+      images: true
+      containers: true
