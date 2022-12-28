@@ -3,7 +3,7 @@ all:
   children:
 
     docker: #docker-container
-      children:
+      hosts:
         dockercore:
         paperless:
         immich:
@@ -14,7 +14,7 @@ all:
         compose_file: /docker
 
     fileserver: #smb-server
-      children:
+      hosts:
         omvlandstr:
         filesrv:
         mediaserver:
@@ -22,7 +22,7 @@ all:
         omvseestr:
 
     vserver: #virtualisierte Server
-      children:
+      hosts:
         pvesmx9:
         pvedell:
         pvefutro1:
@@ -95,7 +95,7 @@ all:
         dockerpi:
           ansible_host: 10.1.0.5
     proxmoxhost: #proxmox-einheiten
-      children:
+      hosts:
         smx9:
         dell:
         futro1:
