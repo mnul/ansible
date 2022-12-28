@@ -2,7 +2,7 @@
 
 - hosts: docker
   
-  beckome: true
+  become: true
 
   tasks:
 
