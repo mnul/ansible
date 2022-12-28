@@ -22,7 +22,7 @@ all:
         omvseestr:
 
     vserver: #virtualisierte Server
-      hosts:
+      children:
         pvesmx9:
         pvedell:
         pvefutro1:
