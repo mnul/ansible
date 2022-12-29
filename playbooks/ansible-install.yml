@@ -4,8 +4,11 @@
   become: true
   tasks:
 
-  - name: update cache
+  - name: update cache, install python3-setuptools
     apt:
+      name: 
+        - python3-setuptools
+      state: present
       update_cache: yes
       cache_valid_time: 3600
   
