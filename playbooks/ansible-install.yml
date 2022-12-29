@@ -10,14 +10,14 @@
       cache_valid_time: 3600
   
   - name: Uninstall apt Ansible
-  apt:
-    name:
-      - ansible
-      - ansible-core
-    state: absent
-  when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS", "Raspbian"]
+    apt:
+      name:
+        - ansible
+        - ansible-core
+      state: absent
+    when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS", "Raspbian"]
 
-- name: Install Ansible using pip
-  pip:
-    name: ansible
-    state: latest
+  - name: Install Ansible using pip
+    ansible.builtin.pip:
+      name: ansible
+      state: latest
