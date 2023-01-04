@@ -6,7 +6,7 @@
   - name: "Pull latest images and start containers"
     community.docker.docker_compose:
       pull: true
-      project_stc: "{{ compose_file }}"
+      project_src: "{{ compose_file }}"
       state: present
 
   - name: "clean up old docker files"
