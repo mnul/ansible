@@ -10,6 +10,7 @@ all:
         rezepte:
         vikunja:
         wallabag:
+        homer:
       vars:
         compose_file: /docker
 

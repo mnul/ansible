@@ -2,7 +2,7 @@
 
 - hosts: 
     - docker
-    - localhost
+    - ansible
   
   become: true
 
