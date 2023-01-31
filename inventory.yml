@@ -10,6 +10,7 @@ all:
         rezepte:
         vikunja:
         wallabag:
+        prometheus:
       vars:
         compose_file: /docker
 
@@ -46,7 +47,7 @@ all:
       hosts:
         dockercore:
           ansible_host: 10.0.0.22
-        phpipam:
+        prometheus:
           ansible_host: 10.0.0.27
         grafana:
           ansoble_host: 10.0.0.29
