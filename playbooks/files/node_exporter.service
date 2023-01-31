@@ -1,10 +1,13 @@
 [Unit]
-Description=Node Exporter Version
+Description=Node Exporter
 After=network-online.target
+
 [Service]
-User=manu
-Group=users
+User=root
+Group=root
 Type=simple
 ExecStart=/usr/local/bin/node_exporter
+Restart=on-failure
+
 [Install]
 WantedBy=multi-user.target

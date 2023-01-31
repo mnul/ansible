@@ -3,7 +3,7 @@
 - hosts: all
   become: true
   vars:
-    node_exporter_version: "1.1.2"
+    node_exporter_version: "1.5.0"
     node_exporter_bin: /usr/local/bin/node_exporter
   
   tasks:
@@ -37,7 +37,7 @@
 
   - name: copy syncthing service file
     copy:
-      src: node_exporter.service.j2
+      src: node_exporter.service
       dest: /etc/systemd/system/node_exporter.service
       owner: root
       group: root
