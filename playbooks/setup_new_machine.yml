@@ -51,3 +51,7 @@
     ansible.builtin.pip:
       name: ansible
       state: latest
+      
+      
+  - name: Run Ansible Pull
+    ansible.builtin.shell: ansible-pull --vault-password-file /root/.ansible-vault-password -U https://github.com/mnul/ansible-pull.git
