@@ -11,6 +11,7 @@ all:
         vikunja:
         wallabag:
         prometheus:
+        speedtest:
       vars:
         compose_file: /docker
 
@@ -64,6 +65,9 @@ all:
           ansible_host: 10.0.0.47
         testct:
           ansible_host: 10.0.0.59
+        speedtest:
+          ansible_host: 10.0.0.48
+
     pvefutro1: #nodes futro1
       hosts:
         unifi:
