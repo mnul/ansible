@@ -1,0 +1,53 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update cache
+    apt:
+      update_cache: yes
+      cache_valid_time: 3600
+
+  
+  - name: full upgrade
+    apt:
+      upgrade: full
+
+  - name: autoremove
+    apt:
+      autoremove: yes
+    
+  - name: clean apt cache
+    apt:
+      autoclean: yes
+    
+  - name: copy ansible-vault-password
+    copy:
+      dest: /root/.ansible-vault-password
+      owner: root
+      group: root
+      mode: 0600
+      content: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          38313465636233333061613131323066643432623638316439643934303734323263623435306333
+          3262393439396137643638303935303964393661663063310a323663646130303062383565393662
+          64353363643439646231306265663463633634666132313661623934393762343339346431383535
+          3735343933623037660a396139373462303566616335303862323632373436363262643765326563
+          33313265323132333665616262613264343030306661343262303566373834656535
+          
+        
+  - name: install pip3, python3-setuptools, git
+    apt:
+      name: 
+        - python3-setuptools
+        - python3-pip
+        - git
+      state: present
+      update_cache: yes
+      cache_valid_time: 3600
+      
+  - name: Install Ansible using pip
+    ansible.builtin.pip:
+      name: ansible
+      state: latest
