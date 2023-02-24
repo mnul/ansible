@@ -12,6 +12,7 @@ all:
         wallabag:
         prometheus:
         speedtest:
+        omvseestr:
       vars:
         compose_file: /docker
 
@@ -99,6 +100,7 @@ all:
       hosts:
         omvseestr:
           ansible_host: 10.1.0.10
+          compose_file: /srv/dev-disk-by-label-HGST8TB/shares/docker
         dockerpi:
           ansible_host: 10.1.0.5
     proxmoxhost: #proxmox-einheiten
