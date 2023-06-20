@@ -23,6 +23,7 @@ all:
         mediaserver:
         datasrv:
         omvseestr:
+        unsafe_file:
 
     vserver: #virtualisierte Server
       children:
@@ -85,6 +86,8 @@ all:
           ansible_host: 10.0.0.44
         wallabag:
           ansible_host: 10.0.0.46
+        unsafe_file:
+          ansible_host: 192.168.199.3
         
     hardware: #bare-metal devices
       hosts:
