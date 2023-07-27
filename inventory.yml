@@ -13,6 +13,7 @@ all:
         prometheus:
         speedtest:
         omvseestr:
+        homer:
       vars:
         compose_file: /docker
 
@@ -23,7 +24,6 @@ all:
         mediaserver:
         datasrv:
         omvseestr:
-        unsafe_file:
 
     vserver: #virtualisierte Server
       children:
@@ -57,8 +57,6 @@ all:
         paperless:
           ansible_host: 10.0.0.30
           compose_file: /home/paperless/paperless-ngx
-        guaca:
-          ansible_host: 10.0.0.40
         ansible:
           ansible_host: 10.0.0.50
         datasrv:
@@ -86,8 +84,6 @@ all:
           ansible_host: 10.0.0.44
         wallabag:
           ansible_host: 10.0.0.46
-        unsafe_file:
-          ansible_host: 192.168.199.3
         
     hardware: #bare-metal devices
       hosts:
@@ -104,8 +100,7 @@ all:
         omvseestr:
           ansible_host: 10.1.0.10
           compose_file: /srv/dev-disk-by-label-HGST8TB/shares/docker
-        dockerpi:
-          ansible_host: 10.1.0.5
+
     proxmoxhost: #proxmox-einheiten
       hosts:
         smx9:
