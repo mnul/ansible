@@ -14,6 +14,7 @@ all:
         speedtest:
         omvseestr:
         homer:
+        netboot:
       vars:
         compose_file: /docker
 
@@ -25,11 +26,12 @@ all:
         datasrv:
         omvseestr:
 
-    vserver: #virtualisierte Server
+    vserver: #virtualisierungs-Server
       children:
         pvesmx9:
         pvedell:
         pvefutro1:
+        pveseestr:
 
     pvesmx9: #nodes smx9
       hosts:
@@ -67,6 +69,8 @@ all:
           ansible_host: 10.0.0.59
         speedtest:
           ansible_host: 10.0.0.48
+        netboot:
+          ansible_host: 10.0.0.23
 
     pvefutro1: #nodes futro1
       hosts:
@@ -84,7 +88,13 @@ all:
           ansible_host: 10.0.0.44
         wallabag:
           ansible_host: 10.0.0.46
-        
+
+    pveseestr:
+      hosts:
+        unifiseestr:
+          ansible_host: 10.1.0.15        
+
+
     hardware: #bare-metal devices
       hosts:
         smx9:
@@ -93,17 +103,22 @@ all:
           ansible_host: 10.0.0.18
         futro1:
           ansible_host: 10.0.0.13
+        futroseestr:
+          ansible_host: 10.1.0.5
 
     landstr: #location landstr
+
     seestr: #location seestr
       hosts:
         omvseestr:
           ansible_host: 10.1.0.10
-          compose_file: /srv/dev-disk-by-label-HGST8TB/shares/docker
+          compose_file: /srv/dev-disk-by-label-HGST8TB/shares/docker/
+        futroseestr:
+        pxeseestr:
 
     proxmoxhost: #proxmox-einheiten
       hosts:
         smx9:
         dell:
         futro1:
-      
+        futroseestr:
