@@ -114,7 +114,7 @@ all:
           ansible_host: 10.1.0.10
           compose_file: /srv/dev-disk-by-label-HGST8TB/shares/docker/
         futroseestr:
-        pxeseestr:
+        pveseestr:
 
     proxmoxhost: #proxmox-einheiten
       hosts:
