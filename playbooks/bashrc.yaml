@@ -4,8 +4,20 @@
 #  become: true
   tasks:
 
-  - name: add locale in .bashrc for user ansible
+  - name: add LC_ALL in .bashrc for user ansible
     ansible.builtin.lineinfile:
       path: /home/ansible/.bashrc
       regexp: '^export LC_ALL=en_US.UTF-8'
       line: 'export LC_ALL=en_US.UTF-8'
+
+  - name: add LANG in .bashrc for user ansible
+    ansible.builtin.lineinfile:
+      path: /home/ansible/.bashrc
+      regexp: '^export LANG=en_US.UTF-8'
+      line: 'export LANG=en_US.UTF-8'
+
+  - name: add LANGUAGE in .bashrc for user ansible
+    ansible.builtin.lineinfile:
+      path: /home/ansible/.bashrc
+      regexp: '^export LANGUAGE=en_US.UTF-8'
+      line: 'export LANGUAGE=en_US.UTF-8'
