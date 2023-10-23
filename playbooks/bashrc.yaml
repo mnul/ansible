@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+#  become: true
+  tasks:
+
+  - name: add locale in .bashrc for user ansible
+    ansible.builtin.lineinfile:
+      path: /home/ansible/.bashrc
+      regexp: '^export LC_ALL=en_US.UTF-8'
+      line: 'export LC_ALL=en_US.UTF-8'
