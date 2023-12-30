@@ -10,7 +10,7 @@ all:
         rezepte:
         vikunja:
         wallabag:
-        prometheus:
+#        prometheus:
         speedtest:
         omvseestr:
         homer:
@@ -52,10 +52,10 @@ all:
       hosts:
         dockercore:
           ansible_host: 10.0.0.22
-        prometheus:
-          ansible_host: 10.0.0.27
-        grafana:
-          ansoble_host: 10.0.0.29
+#        prometheus:
+#          ansible_host: 10.0.0.27
+#        grafana:
+#          ansoble_host: 10.0.0.29
         paperless:
           ansible_host: 10.0.0.30
           compose_file: /home/paperless/paperless-ngx
@@ -106,7 +106,7 @@ all:
         futroseestr:
           ansible_host: 10.1.0.5
 
-    landstr: #location landstr
+#    landstr: #location landstr
 
     seestr: #location seestr
       hosts:
